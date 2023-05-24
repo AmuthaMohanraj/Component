@@ -1,5 +1,22 @@
 import { Component,EventEmitter,Input,OnChanges,Output} from '@angular/core';
 
+
+interface Address{
+  city:string,
+  pincode:number,
+  street:string
+}
+
+interface EmpInterface{
+  empNo:number,
+  empName:string,
+  dob:string,
+  address:Address,
+  phone:number,
+  salary:number,
+
+}
+
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
@@ -7,6 +24,9 @@ import { Component,EventEmitter,Input,OnChanges,Output} from '@angular/core';
 })
 
 export class ChildComponent implements OnChanges{
+
+EmployeePayRoll:EmpInterface[]=[{empNo:124,empName:'mohanraj',dob:'23/04/2002',address:{city:'thiruttani',pincode:631208,street:'60,ThangaSalai Street'},phone:7448462762,salary:10000},
+{empNo:73,empName:'ragul',dob:'02/09/2000',address:{city:'Poothottam',pincode:605602,street:'20C,Muthuvel layout Street'},phone:7397064249,salary:50000}];
 
   patientData={
     id:'',
@@ -18,6 +38,10 @@ export class ChildComponent implements OnChanges{
 
   bx6:string='';
   name:string='mohanraj';
+  
+  selectCity:string='';
+
+
 
 
 // get values from parent

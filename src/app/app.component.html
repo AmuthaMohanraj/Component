@@ -45,10 +45,39 @@
       <li>Patient Gender: {{gender}}</li>
       <li>Patient Age: {{age}}</li>
       <li>Details: {{details}}</li>
-      childValueUsingAfterViewInit: {{message}}
     </ul>
   </div>
 
+  <p>childValueUsingAfterViewInit: {{message}}</p>
+
+  <h4>EmployeePayRoll:</h4>
+  <table class="table" style="max-width:30%;">
+    <thead>
+        <tr>
+           <th>Employee No</th>
+           <th>Employee Name</th>
+           <th>Employee DOB</th>
+           <th>Employee Phone</th>
+           <th>Employee Salary</th>
+           <th>Employee City</th>
+           <th>Employee Pincode</th>
+           <th>Employee Street</th>
+        </tr>
+    </thead>
+    <tbody>
+  <tr *ngFor="let i of empDetails">
+    <td>{{ i.empNo}}</td>
+    <td>{{i.empName}}</td>
+    <td>{{i.dob}}</td>
+    <td>{{i.phone}}</td>
+    <td>{{i.salary}}</td>
+    <td>{{i.address.city}}</td>
+    <td>{{i.address.pincode}}</td>
+    <td>{{i.address.street}}</td>
+  </tr>
+</tbody>
+  </table>
+  
    
   <!-- child component selector -->
   <app-child [batchMembers]="aboutBatchMembers" [colorOfDiv]="parentBgColor" [university]="collage" (data)="captureChildMessage($event)"></app-child>

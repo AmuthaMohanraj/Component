@@ -1,6 +1,23 @@
 import { Component,AfterViewInit, ViewChild} from '@angular/core';
 import { ChildComponent } from './child/child.component';
 
+
+interface Address{
+  city:string,
+  pincode:number,
+  street:string
+}
+
+interface EmpInterface{
+  empNo:number,
+  empName:string,
+  dob:string,
+  address:Address,
+  phone:number,
+  salary:number,
+
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,6 +39,8 @@ export class AppComponent implements AfterViewInit {
 
 // AfterViewInitVariable
   message:string='';
+  empDetails:EmpInterface[]=[];
+
   @ViewChild(ChildComponent) obj1:any;
 
   fun1(){
@@ -53,10 +72,11 @@ export class AppComponent implements AfterViewInit {
     console.log(event,'parent component')
   }
 
-
   //AfterViewForChildComponent
   ngAfterViewInit(): void {
-    this.message=this.obj1.name;
+    this.message = this.obj1.name;
+    this.empDetails = this.obj1.EmployeePayRoll;
+    console.warn('QQQQQ', this.empDetails);
   }
 
 }

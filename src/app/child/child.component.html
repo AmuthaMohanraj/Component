@@ -51,4 +51,47 @@ University:{{university.collagename}}
       <button class="" type="submit" (click)="throwDataFromParent()" class="btn btn-primary">Save</button>
     </form>
   </div>
+
+
+  <h2 class="mt-5">*ngSwitch</h2>
+
+
+  <div class="container">
+    <form>
+      <select class="form-control" name="cities" [(ngModel)]="selectCity">
+        <option value="Tamilnadu">Tamilnadu</option>
+        <option value="Andhra">Andhra</option>
+        <option value="Telugana">Telugana</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+      </select>
+    </form>
+  </div>
+
+  
+  <div class="switchcontainer">  
+  <div [ngSwitch]="selectCity">
+
+    <div *ngSwitchCase="'Tamilnadu'">
+      <p>Tamil Nadu is renowned for its classical dance form called Bharatanatyam, characterized by intricate footwork, graceful movements, and expressive storytelling.</p>
+      <p>The state's cuisine, with its aromatic spices and flavors, offers a delectable variety of dishes such as dosas, idlis, and mouthwatering Chettinad curries.</p>
+    </div>
+
+    <div *ngSwitchCase="'Andhra'">
+        <p>Andhra Pradesh is famous for its vibrant Kuchipudi dance form, characterized by graceful movements, intricate footwork, and expressive storytelling through music and gestures.</p>
+    </div>
+
+    <div *ngSwitchCase="'Telugana'">
+        <p>Telangana is renowned for its unique folk dance form called "Perini Sivatandavam," which combines elements of dance and martial arts, performed with vigor and grace.</p>
+    </div>
+
+    <div *ngSwitchCase="'Karnataka'">
+        <p>Karnataka is renowned for its rich classical music heritage with the melodious strains of Carnatic music and its beautiful ancient temples showcasing intricate stone carvings and architectural marvels.</p>
+    </div>
+
+    <div *ngSwitchCase="'Kerala'">
+        <p>Kerala is known for its captivating traditional dance form called Kathakali, featuring colorful costumes, elaborate makeup, and mesmerizing performances that bring ancient stories and mythology to life.</p>
+    </div>
+  </div>
+</div>
   
