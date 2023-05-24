@@ -1,0 +1,54 @@
+<h2 class="mx-5">child works!</h2>
+<p class="mx-5">Batch Members</p>
+University:{{university.collagename}}
+
+
+ 
+<button (click)="OpenMember()" class="btn btn-success mx-5">Open</button>
+<button (click)="CloseMember()" class="btn btn-danger">Closed</button>
+
+<ul>
+    <li *ngIf="memberName">{{memberName}}</li>
+</ul>
+
+
+<div class="backgroundColor" [style.backgroundColor]="bgColor"></div>
+
+
+<div class="container">
+    <h2>Patient Information</h2>
+    <form>
+      <div class="form-group">
+        <label for="patientId">Patient ID</label>
+        <input type="text" class="form-control" id="patientId" name="id"  [(ngModel)]="patientData.id" placeholder="Enter Patient ID">
+      </div>
+      <div class="form-group">
+        <label for="patientName">Patient Name</label>
+        <input type="text" class="form-control" id="patientName" name="name" [(ngModel)]="patientData.name" placeholder="Enter Patient Name">
+      </div>
+      
+   <div class="form-group">
+  <label for="patientGender">Gender</label>
+  <select class="form-control" id="patientGender" name="gender" [(ngModel)]="patientData['gender']">
+    <option disabled selected>Select Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Transgender">Transgender</option>
+  </select>
+</div>
+
+      
+
+      <div class="form-group">
+        <label for="patientAge">Age</label>
+        <input type="number" class="form-control" id="patientAge" name="age" [(ngModel)]="patientData.age" placeholder="Enter Age">
+      </div>
+      <div class="form-group">
+        <label for="patientDetails">Details</label>
+        <textarea class="form-control" id="patientDetails" rows="3" name="details" [(ngModel)]="patientData.details" placeholder="Enter Patient Details"></textarea>
+      </div>
+
+      <button class="" type="submit" (click)="throwDataFromParent()" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+  
